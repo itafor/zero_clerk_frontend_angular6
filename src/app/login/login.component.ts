@@ -3,7 +3,7 @@ import {ViewEncapsulation} from '@angular/core';
 import { Router } from '@angular/router';
 @Component ({
    selector: 'my-app',
-   encapsulation: ViewEncapsulation.None,
+  // encapsulation: ViewEncapsulation.None,
    templateUrl: '/login.component.html',
    styleUrls: ['/login.component.css']
 })
