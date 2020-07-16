@@ -20,12 +20,16 @@ import { NavbarComponent } from './homePage/navbar/navbar.component';
 import { HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { TokenInterceptorService } from './services/token-interceptor.service';
+import { PlansComponent } from './subscriptions/plans/plans.component';
+import { BuyPlanComponent } from './subscriptions/buy-plan/buy-plan.component';
 
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent},
   { path: 'signup', component: SignupComponent},
   { path: 'home', component: HomeComponent},
+  { path: 'subscription/plans', component: PlansComponent},
+  {path:'buy-plan/:uuid',component:BuyPlanComponent},
   { path: 'user/dashboard', component: UserDashboardComponent },
   { path: 'admin/dashboard', component: AdminDashboardComponent },
   { path: '**', redirectTo: '/home', pathMatch: 'full' }
@@ -34,7 +38,11 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,UserSidebarComponent, UserHeaderComponent, 
-    UserDashboardComponent, UserHomeComponent, AdminDashboardComponent, AdminHeaderComponent, AdminSidebarComponent, AdminHomeComponent, LoginComponent, SignupComponent, RequestPasswordResetComponent, RespondPasswordResetComponent, SubscriptionPlanComponent, HomeComponent, NavbarComponent
+    UserDashboardComponent, UserHomeComponent, AdminDashboardComponent, 
+    AdminHeaderComponent, AdminSidebarComponent, AdminHomeComponent, 
+    LoginComponent, SignupComponent, RequestPasswordResetComponent, 
+    RespondPasswordResetComponent, SubscriptionPlanComponent, HomeComponent, 
+    NavbarComponent, PlansComponent, BuyPlanComponent
   ],
   imports: [
     BrowserModule,  RouterModule.forRoot(appRoutes),
